@@ -95,7 +95,7 @@
 
 ### Inclusão dos ícones das redes sociais do Font-Awesome v5.x 
 
-Alteração da classe do ícone de `fa` para `fab` + `fa-2x mr-3`
+Alteração da classe do ícone de `fa` para `fab` + `fa-2x mr-3` no arquivo '/inc/header-functions.php' do tema
 
 ```PHP
 		<div class="social-links clearfix">
@@ -124,7 +124,7 @@ Alteração da classe do ícone de `fa` para `fab` + `fa-2x mr-3`
 
 ### Removendo o post mais recente dos posts de menor destaque 
 
-antes da linha `<div class="single-article">`
+antes da linha `<div class="single-article">` do arquivo '/inc/widgets/colormag-highlighted-posts-widget.php' do tema
 
 ```PHP
 <?php
