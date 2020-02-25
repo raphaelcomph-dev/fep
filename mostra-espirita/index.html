@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html ng-app="app">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>FEP - Mostra Espírita</title>
+		<!-- <ng-include src="'/src/assets/'"></ng-include> -->
+
+		<!-- CSS Libs -->
+		<link type="text/css" rel="stylesheet" href="/node_modules/@fortawesome/fontawesome-free/css/all.css" />
+		<link type="text/css" rel="stylesheet" href="/node_modules/reset-css/reset.css" />
+		<link type="text/css" rel="stylesheet" href="/node_modules/tailwindcss/dist/tailwind.css" />
+		<link type="text/css" rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.css" />
+	</head>
+	<body>
+		<div ng-view autoscroll="true"></div>
+
+		<!-- Javascript Libs -->
+		<script type="text/javascript" src="/node_modules/underscore/underscore.js"></script>
+		<script type="text/javascript" src="/node_modules/popper.js/dist/popper.min.js"></script>
+		<script type="text/javascript" src="/node_modules/jquery/dist/jquery.js"></script>
+		<script type="text/javascript" src="/node_modules/bootstrap/dist/js/bootstrap.js"></script>
+		<script type="text/javascript" src="/node_modules/angular/angular.js"></script>
+		<script type="text/javascript" src="/node_modules/angular-route/angular-route.js"></script>
+		<script type="text/javascript" src="/node_modules/angular-animate/angular-animate.min.js"></script>
+		<script type="text/javascript" src="/node_modules/angular-scroll/angular-scroll.min.js"></script>
+		<script type="text/javascript" src="/node_modules/angular-sanitize/angular-sanitize.js"></script>
+		<script type="text/javascript" src="/node_modules/dexie/dist/dexie.js"></script>
+		<script type="text/javascript" src="/node_modules/linqjs/dist/linq.js"></script>
+		<script type="text/javascript" src="/node_modules/jquery-mask-plugin/dist/jquery.mask.min.js"></script>
+		<!-- Faker.js docs: https://github.com/marak/Faker.js/ -->
+		<!-- <script type="text/javascript" src="/src/assets/js/faker.min.js"></script> -->
+		<!-- <script type="text/javascript" src="/src/assets/js/date_utils.js"></script> -->
+
+		<!-- AngularJS -->
+		<script type="text/javascript" src="/src/app/app.module.js"></script>
+		<script type="text/javascript" src="/src/app/app.routes.js"></script>
+
+		<!-- AngularJS Components-->
+		<script type="text/javascript" src="/src/app/components/footer/component_footer.controller.js"></script>
+		<script type="text/javascript" src="/src/app/components/header/component_header.controller.js"></script>
+	</body>
+</html>
