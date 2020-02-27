@@ -11,13 +11,16 @@
 		<link type="text/css" rel="stylesheet" href="/node_modules/reset-css/reset.css" />
 		<link type="text/css" rel="stylesheet" href="/node_modules/tailwindcss/dist/tailwind.css" />
 		<link type="text/css" rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.css" />
+		<link type="text/css" rel="stylesheet" href="/src/assets/stylesheets/assan_event.css" />
+		<!-- <link type="text/css" rel="stylesheet" href="/node_modules/jarallax/dist/jarallax.css" /> -->
+		<!-- <link type="text/css" rel="stylesheet" href="/src/assets/stylesheets/assan_onepage.css" /> -->
 	</head>
 	<body>
 		<div ng-view autoscroll="true"></div>
 
 		<!-- Javascript Libs -->
+
 		<script type="text/javascript" src="/node_modules/underscore/underscore.js"></script>
-		<script type="text/javascript" src="/node_modules/popper.js/dist/popper.min.js"></script>
 		<script type="text/javascript" src="/node_modules/jquery/dist/jquery.js"></script>
 		<script type="text/javascript" src="/node_modules/bootstrap/dist/js/bootstrap.js"></script>
 		<script type="text/javascript" src="/node_modules/angular/angular.js"></script>
@@ -28,8 +31,16 @@
 		<script type="text/javascript" src="/node_modules/dexie/dist/dexie.js"></script>
 		<script type="text/javascript" src="/node_modules/linqjs/dist/linq.js"></script>
 		<script type="text/javascript" src="/node_modules/jquery-mask-plugin/dist/jquery.mask.min.js"></script>
+		<script type="text/javascript" src="/src/assets/libs/countdown.js"></script>
+
 		<!-- Faker.js docs: https://github.com/marak/Faker.js/ -->
-		<!-- <script type="text/javascript" src="/src/assets/js/faker.min.js"></script> -->
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Faker/3.1.0/faker.min.js"></script>
+		<script
+			type="text/javascript"
+			src="https://cdnjs.cloudflare.com/ajax/libs/Faker/3.1.0/locales/pt_BR/faker.pt_BR.min.js"
+		>
+			faker.locale = "pt_BR";
+		</script>
 		<!-- <script type="text/javascript" src="/src/assets/js/date_utils.js"></script> -->
 
 		<!-- AngularJS -->
@@ -37,7 +48,12 @@
 		<script type="text/javascript" src="/src/app/app.routes.js"></script>
 
 		<!-- AngularJS Components-->
-		<script type="text/javascript" src="/src/app/components/footer/component_footer.controller.js"></script>
 		<script type="text/javascript" src="/src/app/components/header/component_header.controller.js"></script>
+		<script type="text/javascript" src="/src/app/components/menu/component_menu.controller.js"></script>
+		<script type="text/javascript" src="/src/app/components/about/component_about.controller.js"></script>
+		<script type="text/javascript" src="/src/app/components/speakers/component_speakers.controller.js"></script>
+		<script type="text/javascript" src="/src/app/components/schedule/component_schedule.controller.js"></script>
+		<script type="text/javascript" src="/src/app/components/pricing/component_pricing.controller.js"></script>
+		<script type="text/javascript" src="/src/app/components/footer/component_footer.controller.js"></script>
 	</body>
 </html>
