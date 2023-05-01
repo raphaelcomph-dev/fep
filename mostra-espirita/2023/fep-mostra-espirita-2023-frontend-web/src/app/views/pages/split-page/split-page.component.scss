@@ -1,0 +1,26 @@
+.left {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("../../../../assets/images/bg-fep.jpg");
+    background-position: center;
+    background-size: cover;
+    height: 100%;
+}
+.right {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("../../../../assets/images/bg-mostra.jpg");
+    background-position: center;
+    background-size: cover;
+}
+@media (max-width: 768px) {
+    .left {
+        height: 50%;
+    }
+    .right {
+        height: 50%;
+    }
+}
