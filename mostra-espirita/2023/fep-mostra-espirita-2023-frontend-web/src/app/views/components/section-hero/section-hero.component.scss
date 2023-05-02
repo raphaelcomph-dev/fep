@@ -1,0 +1,11 @@
+.parallax {
+    /* The image used */
+    // background-image: url("https://uigator.com/assan/5.1/public/assets/img/backgrounds/bg6.jpg");
+    background-image: url("../../../../assets/images/img_hero2.jpeg");
+
+    /* Set a specific height */
+    // min-height: 500px;
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+}
