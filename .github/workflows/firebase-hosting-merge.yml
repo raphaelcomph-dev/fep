@@ -13,14 +13,8 @@ jobs:
             - name: Checkout code
               uses: actions/checkout@v2
 
-            - name: log folder content
-              run: pwd && ls
-
-            - name: Navigates to mostra-espirita folder
-              run: cd mostra-espirita/2023/fep-mostra-espirita-2023-frontend-web && ls
-
             - name: Install dependencies
-              run: pwd && npm install
+              run: mostra-espirita/2023/fep-mostra-espirita-2023-frontend-web && npm ci
 
             - name: Build
               run: npm run build
