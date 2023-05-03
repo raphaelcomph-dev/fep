@@ -2,56 +2,27 @@
     <div class="container py-9 py-lg-11 position-relative z-1">
         <div class="row">
             <div class="col-lg-5 mb-5 mb-lg-0">
-                <h5 class="mb-4 text-info aos-init aos-animate" data-aos="fade-up">Programação</h5>
-                <h2 class="display-5 mb-6 aos-init aos-animate" data-aos="fade-up">Dias e Horários</h2>
+                <h5 class="mb-4 text-info">Programação</h5>
+                <h2 class="display-5 mb-6">Dias e Horários</h2>
                 <!--Schedule tabs-->
-                <div class="nav nav-pills flex-column aos-init aos-animate" id="myTab" role="tablist" data-aos="fade-up">
-                    <button
-                        class="nav-link px-4 text-start mb-3"
-                        id="d1-tab"
-                        data-bs-toggle="tab"
-                        data-bs-target="#day1"
-                        type="button"
-                        role="tab"
-                        aria-controls="day1"
-                        aria-selected="true"
-                    >
+                <div class="nav nav-pills flex-column" id="myTab" role="tablist">
+                    <button class="nav-link px-4 text-start mb-3" id="d1-tab" type="button" role="tab" [ngClass]="{ active: showDay == 1 }" (click)="showDay = 1">
                         <span class="d-block fs-5 fw-bold">Dia 1</span>
                         <span class="small">Sexta, 15 de Setembro, 2023</span>
                     </button>
-                    <button
-                        class="nav-link px-4 active text-start mb-3"
-                        id="d2-tab"
-                        data-bs-toggle="tab"
-                        data-bs-target="#day2"
-                        type="button"
-                        role="tab"
-                        aria-controls="day2"
-                        aria-selected="false"
-                        tabindex="-1"
-                    >
+                    <button class="nav-link px-4 text-start mb-3" id="d2-tab" type="button" role="tab" [ngClass]="{ active: showDay == 2 }" (click)="showDay = 2">
                         <span class="d-block fs-5 fw-bold">Dia 2</span>
                         <span class="small">Sábado, 16 de Setembro, 2023</span>
                     </button>
-                    <button
-                        class="nav-link px-4 text-start"
-                        id="d2-tab"
-                        data-bs-toggle="tab"
-                        data-bs-target="#day2"
-                        type="button"
-                        role="tab"
-                        aria-controls="day2"
-                        aria-selected="false"
-                        tabindex="-1"
-                    >
+                    <button class="nav-link px-4 text-start" id="d2-tab" type="button" role="tab" [ngClass]="{ active: showDay == 3 }" (click)="showDay = 3">
                         <span class="d-block fs-5 fw-bold">Dia 3</span>
                         <span class="small">Domingo, 17 de Setembro, 2023</span>
                     </button>
                 </div>
             </div>
             <div class="col-lg-7 col-xl-6 ms-xl-auto">
-                <div data-aos="fade-up" class="tab-content aos-init aos-animate" id="myTabContent">
-                    <div class="tab-pane fade" id="day1" role="tabpanel" aria-labelledby="d1-tab">
+                <div class="tab-content" id="myTabContent">
+                    <div class="tab-pane fade" id="day1" role="tabpanel" *ngIf="showDay == 1" [ngClass]="{ 'active show': showDay == 1 }" [@fadeInOut]>
                         <ul class="pt-4 list-unstyled mb-0">
                             <li class="d-flex flex-column flex-md-row py-4">
                                 <span class="flex-shrink-0 width-13x me-md-4 d-block mb-3 mb-md-0 small text-body-secondary">19h00 - 19h30</span>
@@ -76,7 +47,7 @@
                             </li>
                         </ul>
                     </div>
-                    <div class="tab-pane fade show active" id="day2" role="tabpanel" aria-labelledby="d2-tab">
+                    <div class="tab-pane fade" id="day2" role="tabpanel" *ngIf="showDay == 2" [ngClass]="{ 'active show': showDay == 2 }" [@fadeInOut]>
                         <ul class="pt-4 list-unstyled mb-0">
                             <li class="d-flex flex-column flex-md-row py-4">
                                 <span class="flex-shrink-0 width-13x me-md-4 d-block mb-3 mb-md-0 small text-body-secondary">08h00 - 08h30</span>
@@ -143,6 +114,71 @@
                             </li>
                             <li class="d-flex flex-column flex-md-row py-4">
                                 <span class="flex-shrink-0 width-13x me-md-4 d-block mb-3 mb-md-0 small text-body-secondary">16h00 - 17 h30</span>
+                                <div class="flex-grow-1 ps-4 border-start border-3">
+                                    <h4>Palestra</h4>
+                                    <p class="mb-0">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="tab-pane fade" id="day3" role="tabpanel" *ngIf="showDay == 3" [ngClass]="{ 'active show': showDay == 3 }" [@fadeInOut]>
+                        <ul class="pt-4 list-unstyled mb-0">
+                            <li class="d-flex flex-column flex-md-row py-4">
+                                <span class="flex-shrink-0 width-13x me-md-4 d-block mb-3 mb-md-0 small text-body-secondary">08h30 - 09h00</span>
+                                <div class="flex-grow-1 ps-4 border-start border-3">
+                                    <h4>Apresentação Musical</h4>
+                                    <p class="mb-0">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                                </div>
+                            </li>
+                            <li class="d-flex flex-column flex-md-row py-4">
+                                <span class="flex-shrink-0 width-13x me-md-4 d-block mb-3 mb-md-0 small text-body-secondary">09h00 - 10h30</span>
+                                <div class="flex-grow-1 ps-4 border-start border-3">
+                                    <h4>Palestra</h4>
+                                    <p class="mb-0">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                                </div>
+                            </li>
+                            <li class="d-flex flex-column flex-md-row py-4">
+                                <span class="flex-shrink-0 width-13x me-md-4 d-block mb-3 mb-md-0 small text-body-secondary">10h30 - 11h00</span>
+                                <div class="flex-grow-1 ps-4 border-start border-3">
+                                    <h4>Apresentação Musical</h4>
+                                    <p class="mb-0">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                                </div>
+                            </li>
+                            <li class="d-flex flex-column flex-md-row py-4">
+                                <span class="flex-shrink-0 width-13x me-md-4 d-block mb-3 mb-md-0 small text-body-secondary">11h00 - 12h30</span>
+                                <div class="flex-grow-1 ps-4 border-start border-3">
+                                    <h4>Palestra</h4>
+                                    <p class="mb-0">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                                </div>
+                            </li>
+                            <li class="d-flex flex-column flex-md-row py-4">
+                                <span class="flex-shrink-0 width-13x me-md-4 d-block mb-3 mb-md-0 small text-body-secondary">12h30 - 13h00</span>
+                                <div class="flex-grow-1 ps-4 border-start border-3">
+                                    <h4>Apresentação Musical</h4>
+                                    <p class="mb-0">
+                                        Grupo "Voz & Caridade" da União Espírita Kardecista (UNESKA) encerrará a manhã, se apresentando nas áreas externas, no térreo do edifício do
+                                        auditório.
+                                    </p>
+                                </div>
+                            </li>
+
+                            <li class="d-flex flex-column flex-md-row py-4">
+                                <span class="flex-shrink-0 width-13x me-md-4 d-block mb-3 mb-md-0 small text-body-secondary">13h00 - 15h30</span>
+                                <div class="flex-grow-1 ps-4 border-start border-3">
+                                    <h4>Intervalo</h4>
+                                    <p class="mb-0">Pausa para o almoço.</p>
+                                </div>
+                            </li>
+
+                            <li class="d-flex flex-column flex-md-row py-4">
+                                <span class="flex-shrink-0 width-13x me-md-4 d-block mb-3 mb-md-0 small text-body-secondary">15h30 - 16h00</span>
+                                <div class="flex-grow-1 ps-4 border-start border-3">
+                                    <h4>Apresentação Musical</h4>
+                                    <p class="mb-0">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                                </div>
+                            </li>
+                            <li class="d-flex flex-column flex-md-row py-4">
+                                <span class="flex-shrink-0 width-13x me-md-4 d-block mb-3 mb-md-0 small text-body-secondary">16h00 - 17h30</span>
                                 <div class="flex-grow-1 ps-4 border-start border-3">
                                     <h4>Palestra</h4>
                                     <p class="mb-0">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
