@@ -6,6 +6,7 @@
     background-position: center;
     background-size: cover;
     height: 100%;
+    box-shadow: inset -20px 0px 15px -3px #7a7a84;
 }
 .right {
     display: flex;
@@ -15,6 +16,7 @@
     background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("../../../../assets/images/bg-mostra.jpg");
     background-position: center;
     background-size: cover;
+    box-shadow: inset 20px 0px 15px -3px #7a7a84;
 }
 @media (max-width: 768px) {
     .left {
