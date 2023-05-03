@@ -1,0 +1,12 @@
+{
+    "hosting": {
+        "public": "dist/fep-mostra-espirita-2023-frontend-web",
+        "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
+        "rewrites": [
+            {
+                "source": "**",
+                "destination": "/index.html"
+            }
+        ]
+    }
+}
