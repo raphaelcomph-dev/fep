@@ -9,12 +9,15 @@ name: Deploy to Firebase Hosting on merge
 jobs:
     build_and_deploy:
         runs-on: ubuntu-latest
+        defaults:
+            run:
+                working-directory: ./mostra-espirita/2023/fep-mostra-espirita-2023-frontend-web
         steps:
             - name: Checkout code
               uses: actions/checkout@v2
 
             - name: Install dependencies
-              run: mostra-espirita/2023/fep-mostra-espirita-2023-frontend-web && npm ci
+              run: npm ci
 
             - name: Build
               run: npm run build
