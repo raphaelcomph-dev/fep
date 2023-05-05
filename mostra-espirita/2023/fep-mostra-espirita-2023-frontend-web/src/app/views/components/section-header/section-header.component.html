@@ -1,8 +1,10 @@
-<header class="z-fixed header-transparent header-absolute-top pt-lg-3 header-sticky">
+<!-- <header class="z-fixed header-transparent header-absolute-top pt-lg-3 header-sticky" [ngClass]="{ 'is-fixed': isHeaderFixed }"> -->
+<header class="z-fixed header-transparent header-fixed-top sticky-fixed" [ngClass]="{ 'is-fixed': isHeaderFixed }">
     <nav class="navbar navbar-expand-lg navbar-light navbar-link-white">
+        <div class="navbar-fixed-bg position-absolute"></div>
         <div class="container position-relative">
             <a class="navbar-brand" href="index.html">
-                <img src="../../../../assets/images/logo/logo_FEP_cor.png" alt="" class="img-fluid navbar-brand-sticky" />
+                <img src="../../../../assets/images/logo/logo_FEP_cor_azul.png" alt="" class="img-fluid navbar-brand-sticky" />
                 <img src="../../../../assets/images/logo/logo_FEP_cor.png" alt="" class="img-fluid navbar-brand-transparent" />
             </a>
             <div class="d-flex align-items-center navbar-no-collapse-items order-lg-last">
