@@ -24,27 +24,31 @@
                 <!--begin:Navbar items-->
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link active" (click)="scrollToSection('section-about')" role="button">Sobre </a>
+                        <a class="nav-link" (click)="scrollToSection('section-about')" role="button">Sobre </a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" (click)="scrollToSection('section-team')" role="button">Palestrantes</a>
+                        <a class="nav-link" (click)="scrollToSection('section-team')" [ngClass]="{ active: currentSection === 'section-team' }" role="button">Palestrantes</a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" (click)="scrollToSection('section-schedule')" role="button">Programação </a>
+                        <a class="nav-link" (click)="scrollToSection('section-schedule')" [ngClass]="{ active: currentSection === 'section-schedule' }" role="button"
+                            >Programação
+                        </a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" (click)="scrollToSection('section-pricing')" role="button">Preços </a>
+                        <a class="nav-link" (click)="scrollToSection('section-pricing')" [ngClass]="{ active: currentSection === 'section-pricing' }" role="button">Preços </a>
                     </li>
 
                     <li class="nav-item position-lg-static">
-                        <a class="nav-link" (click)="scrollToSection('section-infra')" role="button">Infraestrutura </a>
+                        <a class="nav-link" (click)="scrollToSection('section-infra')" [ngClass]="{ active: currentSection === 'section-infra' }" role="button">Infraestrutura </a>
                     </li>
 
                     <li class="nav-item position-lg-static">
-                        <a class="nav-link" (click)="scrollToSection('section-testimonials')" role="button">Depoimentos </a>
+                        <a class="nav-link" (click)="scrollToSection('section-testimonials')" [ngClass]="{ active: currentSection === 'section-testimonials' }" role="button"
+                            >Depoimentos
+                        </a>
                     </li>
 
                     <!-- <li class="nav-item position-lg-static">
@@ -52,15 +56,15 @@
                     </li> -->
 
                     <li class="nav-item">
-                        <a class="nav-link" (click)="scrollToSection('section-faq')" role="button">FAQ</a>
+                        <a class="nav-link" (click)="scrollToSection('section-faq')" [ngClass]="{ active: currentSection === 'section-faq' }" role="button">FAQ</a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" (click)="scrollToSection('section-contact')" role="button">Contato</a>
+                        <a class="nav-link" (click)="scrollToSection('section-contact')" [ngClass]="{ active: currentSection === 'section-contact' }" role="button">Contato</a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" (click)="scrollToSection('section-map')" role="button">Localização </a>
+                        <a class="nav-link" (click)="scrollToSection('section-map')" [ngClass]="{ active: currentSection === 'section-map' }" role="button">Localização </a>
                     </li>
                 </ul>
                 <!--end:Navbar items-->

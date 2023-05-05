@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, HostListener } from "@angular/core";
+import { AfterViewInit, ChangeDetectionStrategy, Component, HostListener } from "@angular/core";
 
 @Component({
     selector: "app-section-header",
@@ -6,21 +6,14 @@ import { ChangeDetectionStrategy, Component, HostListener } from "@angular/core"
     styleUrls: ["./section-header.component.scss"],
     changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class SectionHeaderComponent {
+export class SectionHeaderComponent implements AfterViewInit {
     isHeaderFixed = false;
 
     currentSection: string;
 
     @HostListener("window:scroll", ["$event"])
     onWindowScroll() {
-        if (window.scrollY >= 80) {
-            console.log("fixing the header");
-
-            this.isHeaderFixed = true;
-        } else {
-            console.log("releasing the header");
-            this.isHeaderFixed = false;
-        }
+        this.isHeaderFixed = window.scrollY >= 80;
     }
 
     scrollToSection(sectionId: string): void {
@@ -30,5 +23,23 @@ export class SectionHeaderComponent {
             element.scrollIntoView({ behavior: "smooth" });
             this.currentSection = sectionId;
         }, 100);
+    }
+
+    ngAfterViewInit(): void {
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        this.currentSection = entry.target.id;
+                    }
+                });
+            },
+            { rootMargin: "0px", threshold: 0.5 }
+        );
+
+        const sections = document.querySelectorAll("section");
+        sections.forEach((section) => {
+            observer.observe(section);
+        });
     }
 }
