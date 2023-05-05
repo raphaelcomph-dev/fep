@@ -24,7 +24,7 @@
                 <!--begin:Navbar items-->
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link" (click)="scrollToSection('section-about')" role="button">Sobre </a>
+                        <a class="nav-link" (click)="scrollToSection('section-about')" [ngClass]="{ active: currentSection === 'section-about' }" role="button">Sobre </a>
                     </li>
 
                     <li class="nav-item">
