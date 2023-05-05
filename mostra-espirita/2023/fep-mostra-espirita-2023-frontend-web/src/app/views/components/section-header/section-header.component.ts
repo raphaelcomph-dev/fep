@@ -9,6 +9,8 @@ import { ChangeDetectionStrategy, Component, HostListener } from "@angular/core"
 export class SectionHeaderComponent {
     isHeaderFixed = false;
 
+    currentSection: string;
+
     @HostListener("window:scroll", ["$event"])
     onWindowScroll() {
         if (window.scrollY >= 80) {
@@ -19,5 +21,14 @@ export class SectionHeaderComponent {
             console.log("releasing the header");
             this.isHeaderFixed = false;
         }
+    }
+
+    scrollToSection(sectionId: string): void {
+        // this.offcanvasService.dismiss();
+        setTimeout(() => {
+            const element = document.getElementById(sectionId);
+            element.scrollIntoView({ behavior: "smooth" });
+            this.currentSection = sectionId;
+        }, 100);
     }
 }

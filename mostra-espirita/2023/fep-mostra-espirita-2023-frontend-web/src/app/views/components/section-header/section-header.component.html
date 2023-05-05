@@ -1,9 +1,8 @@
-<!-- <header class="z-fixed header-transparent header-absolute-top pt-lg-3 header-sticky" [ngClass]="{ 'is-fixed': isHeaderFixed }"> -->
 <header class="z-fixed header-transparent header-fixed-top sticky-fixed" [ngClass]="{ 'is-fixed': isHeaderFixed }">
     <nav class="navbar navbar-expand-lg navbar-light navbar-link-white">
         <div class="navbar-fixed-bg position-absolute"></div>
         <div class="container position-relative">
-            <a class="navbar-brand" href="index.html">
+            <a class="navbar-brand" (click)="scrollToSection('section-hero')" role="button">
                 <img src="../../../../assets/images/logo/logo_FEP_cor_azul.png" alt="" class="img-fluid navbar-brand-sticky" />
                 <img src="../../../../assets/images/logo/logo_FEP_cor.png" alt="" class="img-fluid navbar-brand-transparent" />
             </a>
@@ -20,52 +19,48 @@
                         <i></i>
                     </span>
                 </button>
-
-                <!-- <div class="nav-item me-2 d-none d-xl-flex">
-                    <a href="#" class="btn btn-success btn-sm">Purchase</a>
-                </div> -->
             </div>
             <div class="collapse navbar-collapse" id="mainNavbarTheme">
                 <!--begin:Navbar items-->
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link active" href="javascript:void(0)" role="button">Sobre </a>
+                        <a class="nav-link active" (click)="scrollToSection('section-about')" role="button">Sobre </a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="javascript:void(0)" role="button" data-bs-auto-close="outside">Palestrantes</a>
+                        <a class="nav-link" (click)="scrollToSection('section-team')" role="button">Palestrantes</a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="javascript:void(0)" role="button" data-bs-auto-close="outside">Programação </a>
+                        <a class="nav-link" (click)="scrollToSection('section-schedule')" role="button">Programação </a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="javascript:void(0)" role="button" data-bs-auto-close="outside">Preços </a>
+                        <a class="nav-link" (click)="scrollToSection('section-pricing')" role="button">Preços </a>
                     </li>
 
                     <li class="nav-item position-lg-static">
-                        <a class="nav-link" href="javascript:void(0)" role="button">Infraestrutura </a>
+                        <a class="nav-link" (click)="scrollToSection('section-infra')" role="button">Infraestrutura </a>
                     </li>
 
                     <li class="nav-item position-lg-static">
-                        <a class="nav-link" href="javascript:void(0)" role="button">Depoimentos </a>
+                        <a class="nav-link" (click)="scrollToSection('section-testimonials')" role="button">Depoimentos </a>
                     </li>
 
-                    <li class="nav-item position-lg-static">
+                    <!-- <li class="nav-item position-lg-static">
                         <a class="nav-link" href="javascript:void(0)" role="button">Galeria </a>
+                    </li> -->
+
+                    <li class="nav-item">
+                        <a class="nav-link" (click)="scrollToSection('section-faq')" role="button">FAQ</a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="javascript:void(0)" role="button">FAQ</a>
+                        <a class="nav-link" (click)="scrollToSection('section-contact')" role="button">Contato</a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="javascript:void(0)" role="button">Contato</a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="javascript:void(0)" role="button" data-bs-auto-close="outside">Localização </a>
+                        <a class="nav-link" (click)="scrollToSection('section-map')" role="button">Localização </a>
                     </li>
                 </ul>
                 <!--end:Navbar items-->
