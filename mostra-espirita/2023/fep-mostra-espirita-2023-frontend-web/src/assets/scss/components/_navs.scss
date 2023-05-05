@@ -1,6 +1,5 @@
 //Navs
 
-
 .nav {
     &.flex-column {
         .nav-link {
@@ -8,18 +7,19 @@
         }
     }
 }
-.text-white,.text-light{
-    --#{$prefix}body-color:#{$white};
-    --#{$prefix}body-color-rgb: 255,255,255;
-    .nav{
-        --#{$prefix}text-opacity: .75;
-        --#{$prefix}nav-link-color: rgba(var(--#{$prefix}body-color-rgb),var(--#{$prefix}text-opacity));
+.text-white,
+.text-light {
+    --#{$prefix}body-color: #{$white};
+    --#{$prefix}body-color-rgb: 255, 255, 255;
+    .nav {
+        --#{$prefix}text-opacity: 0.75;
+        --#{$prefix}nav-link-color: rgba(var(--#{$prefix}body-color-rgb), var(--#{$prefix}text-opacity));
         --#{$prefix}nav-link-hover-color: #{$white};
         --#{$prefix}nav-link-active-color: #{$white};
         --#{$prefix}nav-link-disabled-color: #{$text-muted};
-      .nav-link.active{
-        color: var(--#{$prefix}nav-link-active-color);
-      }
+        .nav-link.active {
+            color: var(--#{$prefix}nav-link-active-color);
+        }
     }
 }
 .nav.nav-filter {
@@ -46,48 +46,49 @@
     padding-bottom: 1px; // to prevent active links border bottom from hiding
     // Hide scrollbar
     &::-webkit-scrollbar {
-      display: none;
+        display: none;
     }
-  }
+}
 
 //Nav vertical outline
-.nav-tabs-vertical{
+.nav-tabs-vertical {
     flex-direction: column;
     flex-shrink: 0;
     flex: 1;
 }
-.nav.nav-pills.nav-pills-white{
-    .nav-link.active{
+.nav.nav-pills.nav-pills-white {
+    .nav-link.active {
         background-color: $component-active-bg;
         color: $component-active-color;
     }
 }
 
 //Underline tabs
-.nav-tabs{
+.nav-tabs {
     border-bottom: 2px solid var(--#{$prefix}border-color);
-    .nav-link{
+    .nav-link {
         padding-left: 0px;
         padding-right: 0px;
-        &:not(:first-child){
+        &:not(:first-child) {
             margin-left: 1.75rem;
         }
     }
-    .nav-link{
+    .nav-link {
         margin-bottom: -2px;
         border-bottom: 2px solid transparent;
         border-top: 0px;
         border-left: 0px;
         border-right: 0px;
         background-color: transparent;
-        
-        &.active{
+
+        &.active {
             background-color: transparent;
             border-bottom-color: $component-active-bg;
         }
     }
 }
 
-.nav-link.active{
+.nav-link.active {
     color: var(--#{$prefix}link-hover-color);
+    font-weight: 600 !important;
 }
