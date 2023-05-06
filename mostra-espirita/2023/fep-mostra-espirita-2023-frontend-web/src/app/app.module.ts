@@ -18,6 +18,7 @@ import { SectionFaqComponent } from "./views/components/section-faq/section-faq.
 import { SectionMapComponent } from "./views/components/section-map/section-map.component";
 import { SectionContactComponent } from "./views/components/section-contact/section-contact.component";
 import { SectionFooterComponent } from "./views/components/section-footer/section-footer.component";
+import { NgxMaskDirective, NgxMaskPipe, provideNgxMask } from "ngx-mask";
 
 @NgModule({
     declarations: [
@@ -37,8 +38,8 @@ import { SectionFooterComponent } from "./views/components/section-footer/sectio
         SectionContactComponent,
         SectionFooterComponent,
     ],
-    imports: [BrowserModule, AppRoutingModule, BrowserAnimationsModule],
-    providers: [],
+    imports: [BrowserModule, AppRoutingModule, BrowserAnimationsModule, NgxMaskDirective, NgxMaskPipe],
+    providers: [provideNgxMask()],
     bootstrap: [AppComponent],
 })
 export class AppModule {}
