@@ -1,6 +1,7 @@
 import { NgModule } from "@angular/core";
 import { BrowserModule } from "@angular/platform-browser";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { HttpClientModule } from "@angular/common/http";
 
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
@@ -19,6 +20,8 @@ import { SectionMapComponent } from "./views/components/section-map/section-map.
 import { SectionContactComponent } from "./views/components/section-contact/section-contact.component";
 import { SectionFooterComponent } from "./views/components/section-footer/section-footer.component";
 import { NgxMaskDirective, NgxMaskPipe, provideNgxMask } from "ngx-mask";
+import { FormsModule } from "@angular/forms";
+import { ToastrModule } from "ngx-toastr";
 
 @NgModule({
     declarations: [
@@ -38,7 +41,21 @@ import { NgxMaskDirective, NgxMaskPipe, provideNgxMask } from "ngx-mask";
         SectionContactComponent,
         SectionFooterComponent,
     ],
-    imports: [BrowserModule, AppRoutingModule, BrowserAnimationsModule, NgxMaskDirective, NgxMaskPipe],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        BrowserAnimationsModule,
+        HttpClientModule,
+        FormsModule,
+        NgxMaskDirective,
+        NgxMaskPipe,
+        ToastrModule.forRoot({
+            timeOut: 5000,
+            positionClass: "toast-top-center",
+            preventDuplicates: true,
+            progressBar: true,
+        }),
+    ],
     providers: [provideNgxMask()],
     bootstrap: [AppComponent],
 })
