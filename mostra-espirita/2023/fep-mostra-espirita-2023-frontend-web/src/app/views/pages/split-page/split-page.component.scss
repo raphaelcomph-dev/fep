@@ -21,8 +21,10 @@
 @media (max-width: 768px) {
     .left {
         height: 50%;
+        box-shadow: inset 0px -20px 15px -3px #8b786a;
     }
     .right {
         height: 50%;
+        box-shadow: inset 0px 20px 15px -3px #8b786a;
     }
 }
