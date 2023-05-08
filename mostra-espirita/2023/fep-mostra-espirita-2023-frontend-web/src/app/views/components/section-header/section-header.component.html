@@ -14,6 +14,7 @@
                     data-bs-target="#mainNavbarTheme"
                     aria-controls="mainNavbarTheme"
                     aria-label="Toggle navigation"
+                    (click)="openNavbar(content)"
                 >
                     <span class="navbar-toggler-icon">
                         <i></i>
@@ -24,51 +25,210 @@
                 <!--begin:Navbar items-->
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link" (click)="scrollToSection('section-about')" [ngClass]="{ active: currentSection === 'section-about' }" role="button">Sobre </a>
+                        <a
+                            class="nav-link"
+                            (click)="scrollToSection('section-about')"
+                            [ngClass]="{ active: currentSection === 'section-about' }"
+                            role="button"
+                            >Sobre
+                        </a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" (click)="scrollToSection('section-team')" [ngClass]="{ active: currentSection === 'section-team' }" role="button">Palestrantes</a>
+                        <a
+                            class="nav-link"
+                            (click)="scrollToSection('section-team')"
+                            [ngClass]="{ active: currentSection === 'section-team' }"
+                            role="button"
+                            >Palestrantes</a
+                        >
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" (click)="scrollToSection('section-schedule')" [ngClass]="{ active: currentSection === 'section-schedule' }" role="button"
+                        <a
+                            class="nav-link"
+                            (click)="scrollToSection('section-schedule')"
+                            [ngClass]="{ active: currentSection === 'section-schedule' }"
+                            role="button"
                             >Programação
                         </a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" (click)="scrollToSection('section-pricing')" [ngClass]="{ active: currentSection === 'section-pricing' }" role="button">Preços </a>
+                        <a
+                            class="nav-link"
+                            (click)="scrollToSection('section-pricing')"
+                            [ngClass]="{ active: currentSection === 'section-pricing' }"
+                            role="button"
+                            >Preços
+                        </a>
                     </li>
 
-                    <li class="nav-item position-lg-static">
-                        <a class="nav-link" (click)="scrollToSection('section-infra')" [ngClass]="{ active: currentSection === 'section-infra' }" role="button">Infraestrutura </a>
+                    <li class="nav-item">
+                        <a
+                            class="nav-link"
+                            (click)="scrollToSection('section-infra')"
+                            [ngClass]="{ active: currentSection === 'section-infra' }"
+                            role="button"
+                            >Infraestrutura
+                        </a>
                     </li>
 
-                    <li class="nav-item position-lg-static">
-                        <a class="nav-link" (click)="scrollToSection('section-testimonials')" [ngClass]="{ active: currentSection === 'section-testimonials' }" role="button"
+                    <li class="nav-item">
+                        <a
+                            class="nav-link"
+                            (click)="scrollToSection('section-testimonials')"
+                            [ngClass]="{ active: currentSection === 'section-testimonials' }"
+                            role="button"
                             >Depoimentos
                         </a>
                     </li>
 
-                    <!-- <li class="nav-item position-lg-static">
-                        <a class="nav-link" href="javascript:void(0)" role="button">Galeria </a>
-                    </li> -->
-
                     <li class="nav-item">
-                        <a class="nav-link" (click)="scrollToSection('section-faq')" [ngClass]="{ active: currentSection === 'section-faq' }" role="button">FAQ</a>
+                        <a
+                            class="nav-link"
+                            (click)="scrollToSection('section-faq')"
+                            [ngClass]="{ active: currentSection === 'section-faq' }"
+                            role="button"
+                            >FAQ</a
+                        >
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" (click)="scrollToSection('section-contact')" [ngClass]="{ active: currentSection === 'section-contact' }" role="button">Contato</a>
+                        <a
+                            class="nav-link"
+                            (click)="scrollToSection('section-contact')"
+                            [ngClass]="{ active: currentSection === 'section-contact' }"
+                            role="button"
+                            >Contato</a
+                        >
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" (click)="scrollToSection('section-map')" [ngClass]="{ active: currentSection === 'section-map' }" role="button">Localização </a>
+                        <a
+                            class="nav-link"
+                            (click)="scrollToSection('section-map')"
+                            [ngClass]="{ active: currentSection === 'section-map' }"
+                            role="button"
+                            >Localização
+                        </a>
                     </li>
                 </ul>
                 <!--end:Navbar items-->
             </div>
+
+            <ng-template #content let-offcanvas>
+                <div class="offcanvas-header pb-0">
+                    <a class="" (click)="scrollToSection('section-hero')" role="button">
+                        <img
+                            src="../../../../assets/images/logo/logo-mostra.png"
+                            style="max-width: 250px"
+                            alt=""
+                            class="img-fluid navbar-brand-transparent"
+                        />
+                    </a>
+                    <button type="button" class="btn-close" aria-label="Close" (click)="offcanvas.dismiss('Cross click')">
+                        <i class="fa-solid fa-xmark"></i>
+                    </button>
+                </div>
+                <div class="offcanvas-body pt-0">
+                    <ul class="navbar-nav ms-lg-auto">
+                        <li class="nav-item">
+                            <a
+                                class="nav-link"
+                                (click)="scrollToSection('section-about')"
+                                [ngClass]="{ active: currentSection === 'section-about' }"
+                                role="button"
+                                >Sobre
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a
+                                class="nav-link"
+                                (click)="scrollToSection('section-team')"
+                                [ngClass]="{ active: currentSection === 'section-team' }"
+                                role="button"
+                                >Palestrantes</a
+                            >
+                        </li>
+
+                        <li class="nav-item">
+                            <a
+                                class="nav-link"
+                                (click)="scrollToSection('section-schedule')"
+                                [ngClass]="{ active: currentSection === 'section-schedule' }"
+                                role="button"
+                                >Programação
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a
+                                class="nav-link"
+                                (click)="scrollToSection('section-pricing')"
+                                [ngClass]="{ active: currentSection === 'section-pricing' }"
+                                role="button"
+                                >Preços
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a
+                                class="nav-link"
+                                (click)="scrollToSection('section-infra')"
+                                [ngClass]="{ active: currentSection === 'section-infra' }"
+                                role="button"
+                                >Infraestrutura
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a
+                                class="nav-link"
+                                (click)="scrollToSection('section-testimonials')"
+                                [ngClass]="{ active: currentSection === 'section-testimonials' }"
+                                role="button"
+                                >Depoimentos
+                            </a>
+                        </li>
+
+                        <!-- <li class="nav-item position-lg-static">
+                        <a class="nav-link" href="javascript:void(0)" role="button">Galeria </a>
+                    </li> -->
+
+                        <li class="nav-item">
+                            <a
+                                class="nav-link"
+                                (click)="scrollToSection('section-faq')"
+                                [ngClass]="{ active: currentSection === 'section-faq' }"
+                                role="button"
+                                >FAQ</a
+                            >
+                        </li>
+
+                        <li class="nav-item">
+                            <a
+                                class="nav-link"
+                                (click)="scrollToSection('section-contact')"
+                                [ngClass]="{ active: currentSection === 'section-contact' }"
+                                role="button"
+                                >Contato</a
+                            >
+                        </li>
+
+                        <li class="nav-item">
+                            <a
+                                class="nav-link"
+                                (click)="scrollToSection('section-map')"
+                                [ngClass]="{ active: currentSection === 'section-map' }"
+                                role="button"
+                                >Localização
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </ng-template>
         </div>
     </nav>
 </header>

@@ -1,4 +1,5 @@
-import { AfterViewInit, ChangeDetectionStrategy, Component, HostListener } from "@angular/core";
+import { AfterViewInit, ChangeDetectionStrategy, Component, HostListener, TemplateRef } from "@angular/core";
+import { NgbOffcanvas } from "@ng-bootstrap/ng-bootstrap";
 
 @Component({
     selector: "app-section-header",
@@ -8,8 +9,9 @@ import { AfterViewInit, ChangeDetectionStrategy, Component, HostListener } from 
 })
 export class SectionHeaderComponent implements AfterViewInit {
     isHeaderFixed = false;
-
     currentSection: string;
+
+    constructor(private offcanvasService: NgbOffcanvas) {}
 
     @HostListener("window:scroll", ["$event"])
     onWindowScroll() {
@@ -17,7 +19,7 @@ export class SectionHeaderComponent implements AfterViewInit {
     }
 
     scrollToSection(sectionId: string): void {
-        // this.offcanvasService.dismiss();
+        this.offcanvasService.dismiss();
         setTimeout(() => {
             const element = document.getElementById(sectionId);
             element.scrollIntoView({ behavior: "smooth" });
@@ -41,5 +43,9 @@ export class SectionHeaderComponent implements AfterViewInit {
         sections.forEach((section) => {
             observer.observe(section);
         });
+    }
+
+    openNavbar(content: TemplateRef<any>): void {
+        this.offcanvasService.open(content, { position: "end" });
     }
 }

@@ -22,6 +22,7 @@ import { SectionFooterComponent } from "./views/components/section-footer/sectio
 import { NgxMaskDirective, NgxMaskPipe, provideNgxMask } from "ngx-mask";
 import { FormsModule } from "@angular/forms";
 import { ToastrModule } from "ngx-toastr";
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
     declarations: [
@@ -55,6 +56,7 @@ import { ToastrModule } from "ngx-toastr";
             preventDuplicates: true,
             progressBar: true,
         }),
+        NgbModule,
     ],
     providers: [provideNgxMask()],
     bootstrap: [AppComponent],
