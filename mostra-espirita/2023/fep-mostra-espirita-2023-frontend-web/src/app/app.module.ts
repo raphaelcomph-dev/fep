@@ -1,7 +1,13 @@
-import { NgModule } from "@angular/core";
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from "@angular/core";
 import { BrowserModule } from "@angular/platform-browser";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { HttpClientModule } from "@angular/common/http";
+import { FormsModule } from "@angular/forms";
+
+import { ToastrModule } from "ngx-toastr";
+import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
+import { NgxMaskDirective, NgxMaskPipe, provideNgxMask } from "ngx-mask";
+import { register } from "swiper/element/bundle";
 
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
@@ -19,10 +25,8 @@ import { SectionFaqComponent } from "./views/components/section-faq/section-faq.
 import { SectionMapComponent } from "./views/components/section-map/section-map.component";
 import { SectionContactComponent } from "./views/components/section-contact/section-contact.component";
 import { SectionFooterComponent } from "./views/components/section-footer/section-footer.component";
-import { NgxMaskDirective, NgxMaskPipe, provideNgxMask } from "ngx-mask";
-import { FormsModule } from "@angular/forms";
-import { ToastrModule } from "ngx-toastr";
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+
+register();
 
 @NgModule({
     declarations: [
@@ -60,5 +64,6 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     ],
     providers: [provideNgxMask()],
     bootstrap: [AppComponent],
+    schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class AppModule {}

@@ -1,67 +1,485 @@
 <section class="bg-gradient-primary text-white position-relative" id="section-testimonials">
-    <div class="container py-9 py-lg-11 position-relative z-1">
-        <h5 class="mb-4 text-info aos-init aos-animate" data-aos="fade-up">Depoimentos</h5>
-        <h2 class="display-5 mb-6 aos-init aos-animate" data-aos="fade-up">Relatos de quem já participou</h2>
-        <div class="row">
-            <div class="row mb-7 justify-content-between">
-                <div class="col-lg-4 mb-6 mb-lg-0 aos-init aos-animate" data-aos="fade-up">
-                    <figure class="mb-0 position-relative">
-                        <div>
-                            <blockquote>
-                                <p class="lead mb-4">
-                                    "Pariatur id et omnis nihil. Dignissimos molestias aut reiciendis mollitia ipsum. Aliquam laborum iste voluptas consequatur consequatur rerum
-                                    minima. "
-                                </p>
-                            </blockquote>
-                            <figcaption class="d-flex align-items-center">
-                                <div class="position-relative me-4">
-                                    <img class="position-relative avatar rounded-circle" src="https://uigator.com/assan/5.1/public/assets/img/avatar/2.jpg" alt="" />
-                                </div>
-                                <div>
-                                    <h6 class="mb-0">Maria da Silva</h6>
-                                    <span class="text-white-50 small"> Participou da 30ª e 29ª Mostra </span>
-                                </div>
-                            </figcaption>
-                        </div>
-                    </figure>
-                </div>
-                <div class="col-lg-4 mb-6 mb-lg-0 aos-init aos-animate" data-aos="fade-up">
-                    <figure class="mb-0 position-relative">
-                        <div>
-                            <blockquote>
-                                <p class="lead mb-4">"Et et sed vero aut. Et ea eius ipsam et eaque veritatis sed nostrum."</p>
-                            </blockquote>
-                            <figcaption class="d-flex align-items-center">
-                                <div class="position-relative me-4">
-                                    <img class="position-relative avatar rounded-circle" src="https://uigator.com/assan/5.1/public/assets/img/avatar/1.jpg" alt="" />
-                                </div>
-                                <div>
-                                    <h6 class="mb-0">Fulaninha de Tal</h6>
-                                    <span class="text-white-50 small"> Participou da 31ª Mostra Jovem </span>
-                                </div>
-                            </figcaption>
-                        </div>
-                    </figure>
-                </div>
-                <div class="col-lg-4 aos-init aos-animate" data-aos="fade-up">
-                    <figure class="mb-0 position-relative">
-                        <div>
-                            <blockquote>
-                                <p class="lead mb-4">"Fugiat consectetur unde sed corrupti et ut temporibus. Voluptatibus sit et enim corporis aperiam non et cumque."</p>
-                            </blockquote>
-                            <figcaption class="d-flex align-items-center">
-                                <div class="position-relative me-4">
-                                    <img class="position-relative avatar rounded-circle" src="https://uigator.com/assan/5.1/public/assets/img/avatar/7.jpg" alt="" />
-                                </div>
-                                <div>
-                                    <h6 class="mb-0">Beltrano Das Dores</h6>
-                                    <span class="text-white-50 small">Palestrante da 31ª Mostra</span>
-                                </div>
-                            </figcaption>
-                        </div>
-                    </figure>
-                </div>
-            </div>
-        </div>
+    <div class="container py-9 py-lg-7 position-relative z-1">
+        <h5 class="mb-4 text-info">Depoimentos</h5>
+        <h2 class="display-5 mb-6">Relatos de quem já participou</h2>
+        <swiper-container
+            class="swiper-container row justify-content-between"
+            style="min-height: 260px"
+            pagination="true"
+            slides-per-view="1"
+            space-between="10"
+            loop="true"
+            autoplay-delay="2500"
+            autoplay-disable-on-interaction="false"
+            *ngIf="slidesPerView === 1"
+        >
+            <swiper-slide class="mb-6 mb-lg-0">
+                <figure class="mb-0 position-relative">
+                    <div>
+                        <blockquote>
+                            <p class="lead mb-4">
+                                "Pariatur id et omnis nihil. Dignissimos molestias aut reiciendis mollitia ipsum. Aliquam laborum iste
+                                voluptas consequatur consequatur rerum minima. "
+                            </p>
+                        </blockquote>
+                        <figcaption class="d-flex align-items-center">
+                            <div class="position-relative me-4">
+                                <img
+                                    class="position-relative avatar rounded-circle"
+                                    src="../../../../assets/images/testimonials/spidey/Marvel-Spiderman-avatar.png"
+                                    alt=""
+                                />
+                            </div>
+                            <div>
+                                <h6 class="mb-0">Peter Parker</h6>
+                                <span class="text-white-50 small"> Participou da 30ª e 29ª Mostra Jovem </span>
+                            </div>
+                        </figcaption>
+                    </div>
+                </figure>
+            </swiper-slide>
+            <swiper-slide class="mb-6 mb-lg-0">
+                <figure class="mb-0 position-relative">
+                    <div>
+                        <blockquote>
+                            <p class="lead mb-4">"Et et sed vero aut. Et ea eius ipsam et eaque veritatis sed nostrum."</p>
+                        </blockquote>
+                        <figcaption class="d-flex align-items-center">
+                            <div class="position-relative me-4">
+                                <img
+                                    class="position-relative avatar rounded-circle"
+                                    src="../../../../assets/images/testimonials/caps/marvel-captain-america-square.png"
+                                    alt=""
+                                />
+                            </div>
+                            <div>
+                                <h6 class="mb-0">Steve Rogers</h6>
+                                <span class="text-white-50 small"> Participou de todas as Mostras </span>
+                            </div>
+                        </figcaption>
+                    </div>
+                </figure>
+            </swiper-slide>
+            <swiper-slide class="mb-6 mb-lg-0">
+                <figure class="mb-0 position-relative">
+                    <div>
+                        <blockquote>
+                            <p class="lead mb-4">
+                                "Fugiat consectetur unde sed corrupti et ut temporibus. Voluptatibus sit et enim corporis aperiam non et
+                                cumque."
+                            </p>
+                        </blockquote>
+                        <figcaption class="d-flex align-items-center">
+                            <div class="position-relative me-4">
+                                <img
+                                    class="position-relative avatar rounded-circle"
+                                    src="../../../../assets/images/testimonials/hulk/Marvel-Hulk.svg"
+                                    alt=""
+                                />
+                            </div>
+                            <div>
+                                <h6 class="mb-0">Bruce Banner</h6>
+                                <span class="text-white-50 small">Palestrante da 31ª Mostra</span>
+                            </div>
+                        </figcaption>
+                    </div>
+                </figure>
+            </swiper-slide>
+            <swiper-slide class="mb-6 mb-lg-0">
+                <figure class="mb-0 position-relative">
+                    <div>
+                        <blockquote>
+                            <p class="lead mb-4">
+                                "Ipsa facilis est. Commodi aut aut doloribus veniam non error eveniet. Fugiat voluptas saepe rerum
+                                temporibus est tenetur odit. Amet vero omnis omnis unde dignissimos ut libero. Culpa et magnam ipsam quos. "
+                            </p>
+                        </blockquote>
+                        <figcaption class="d-flex align-items-center">
+                            <div class="position-relative me-4">
+                                <img
+                                    class="position-relative avatar rounded-circle"
+                                    src="../../../../assets/images/testimonials/batsy/DC-Comics-batman-square.png"
+                                    alt=""
+                                />
+                            </div>
+                            <div>
+                                <h6 class="mb-0">Bruce Wayne</h6>
+                                <span class="text-white-50 small">Participou da 28ª, 29ª, 30ª e 31ª Mostra</span>
+                            </div>
+                        </figcaption>
+                    </div>
+                </figure>
+            </swiper-slide>
+            <swiper-slide class="mb-6 mb-lg-0">
+                <figure class="mb-0 position-relative">
+                    <div>
+                        <blockquote>
+                            <p class="lead mb-4">
+                                "Minima nesciunt eos quis sit corrupti. Sapiente explicabo et optio soluta. Illum delectus optio velit
+                                molestiae aut qui dolor eaque. Illum eos autem et ullam."
+                            </p>
+                        </blockquote>
+                        <figcaption class="d-flex align-items-center">
+                            <div class="position-relative me-4">
+                                <img
+                                    class="position-relative avatar rounded-circle"
+                                    src="../../../../assets/images/testimonials/sups/DC-Comics-Superman copie.png"
+                                    alt=""
+                                />
+                            </div>
+                            <div>
+                                <h6 class="mb-0">Clark Kent</h6>
+                                <span class="text-white-50 small">Participou da 31ª Mostra</span>
+                            </div>
+                        </figcaption>
+                    </div>
+                </figure>
+            </swiper-slide>
+            <swiper-slide class="mb-6 mb-lg-0">
+                <figure class="mb-0 position-relative">
+                    <div>
+                        <blockquote>
+                            <p class="lead mb-4">
+                                "In ratione quam. Debitis nihil suscipit similique enim iusto. Maxime ratione laboriosam sunt sed provident
+                                et. Ipsum asperiores rerum vero placeat dolores magnam."
+                            </p>
+                        </blockquote>
+                        <figcaption class="d-flex align-items-center">
+                            <div class="position-relative me-4">
+                                <img
+                                    class="position-relative avatar rounded-circle"
+                                    src="../../../../assets/images/testimonials/wonder/DC-Comics-Wonder-Woman-square.png"
+                                    alt=""
+                                />
+                            </div>
+                            <div>
+                                <h6 class="mb-0">Diana Prince</h6>
+                                <span class="text-white-50 small">Participou da 30ª e 31ª Mostra</span>
+                            </div>
+                        </figcaption>
+                    </div>
+                </figure>
+            </swiper-slide>
+        </swiper-container>
+
+        <swiper-container
+            class="swiper-container row justify-content-between"
+            style="min-height: 320px"
+            pagination="true"
+            slides-per-view="2"
+            space-between="10"
+            loop="true"
+            autoplay-delay="2500"
+            autoplay-disable-on-interaction="false"
+            *ngIf="slidesPerView === 2"
+        >
+            <swiper-slide class="mb-6 mb-lg-0">
+                <figure class="mb-0 position-relative">
+                    <div>
+                        <blockquote>
+                            <p class="lead mb-4">
+                                "Pariatur id et omnis nihil. Dignissimos molestias aut reiciendis mollitia ipsum. Aliquam laborum iste
+                                voluptas consequatur consequatur rerum minima. "
+                            </p>
+                        </blockquote>
+                        <figcaption class="d-flex align-items-center">
+                            <div class="position-relative me-4">
+                                <img
+                                    class="position-relative avatar rounded-circle"
+                                    src="../../../../assets/images/testimonials/spidey/Marvel-Spiderman-avatar.png"
+                                    alt=""
+                                />
+                            </div>
+                            <div>
+                                <h6 class="mb-0">Peter Parker</h6>
+                                <span class="text-white-50 small"> Participou da 30ª e 29ª Mostra Jovem </span>
+                            </div>
+                        </figcaption>
+                    </div>
+                </figure>
+            </swiper-slide>
+            <swiper-slide class="mb-6 mb-lg-0">
+                <figure class="mb-0 position-relative">
+                    <div>
+                        <blockquote>
+                            <p class="lead mb-4">"Et et sed vero aut. Et ea eius ipsam et eaque veritatis sed nostrum."</p>
+                        </blockquote>
+                        <figcaption class="d-flex align-items-center">
+                            <div class="position-relative me-4">
+                                <img
+                                    class="position-relative avatar rounded-circle"
+                                    src="../../../../assets/images/testimonials/caps/marvel-captain-america-square.png"
+                                    alt=""
+                                />
+                            </div>
+                            <div>
+                                <h6 class="mb-0">Steve Rogers</h6>
+                                <span class="text-white-50 small"> Participou de todas as Mostras </span>
+                            </div>
+                        </figcaption>
+                    </div>
+                </figure>
+            </swiper-slide>
+            <swiper-slide class="mb-6 mb-lg-0">
+                <figure class="mb-0 position-relative">
+                    <div>
+                        <blockquote>
+                            <p class="lead mb-4">
+                                "Fugiat consectetur unde sed corrupti et ut temporibus. Voluptatibus sit et enim corporis aperiam non et
+                                cumque."
+                            </p>
+                        </blockquote>
+                        <figcaption class="d-flex align-items-center">
+                            <div class="position-relative me-4">
+                                <img
+                                    class="position-relative avatar rounded-circle"
+                                    src="../../../../assets/images/testimonials/hulk/Marvel-Hulk.svg"
+                                    alt=""
+                                />
+                            </div>
+                            <div>
+                                <h6 class="mb-0">Bruce Banner</h6>
+                                <span class="text-white-50 small">Palestrante da 31ª Mostra</span>
+                            </div>
+                        </figcaption>
+                    </div>
+                </figure>
+            </swiper-slide>
+            <swiper-slide class="mb-6 mb-lg-0">
+                <figure class="mb-0 position-relative">
+                    <div>
+                        <blockquote>
+                            <p class="lead mb-4">
+                                "Ipsa facilis est. Commodi aut aut doloribus veniam non error eveniet. Fugiat voluptas saepe rerum
+                                temporibus est tenetur odit. Amet vero omnis omnis unde dignissimos ut libero. Culpa et magnam ipsam quos. "
+                            </p>
+                        </blockquote>
+                        <figcaption class="d-flex align-items-center">
+                            <div class="position-relative me-4">
+                                <img
+                                    class="position-relative avatar rounded-circle"
+                                    src="../../../../assets/images/testimonials/batsy/DC-Comics-batman-square.png"
+                                    alt=""
+                                />
+                            </div>
+                            <div>
+                                <h6 class="mb-0">Bruce Wayne</h6>
+                                <span class="text-white-50 small">Participou da 28ª, 29ª, 30ª e 31ª Mostra</span>
+                            </div>
+                        </figcaption>
+                    </div>
+                </figure>
+            </swiper-slide>
+            <swiper-slide class="mb-6 mb-lg-0">
+                <figure class="mb-0 position-relative">
+                    <div>
+                        <blockquote>
+                            <p class="lead mb-4">
+                                "Minima nesciunt eos quis sit corrupti. Sapiente explicabo et optio soluta. Illum delectus optio velit
+                                molestiae aut qui dolor eaque. Illum eos autem et ullam."
+                            </p>
+                        </blockquote>
+                        <figcaption class="d-flex align-items-center">
+                            <div class="position-relative me-4">
+                                <img
+                                    class="position-relative avatar rounded-circle"
+                                    src="../../../../assets/images/testimonials/sups/DC-Comics-Superman copie.png"
+                                    alt=""
+                                />
+                            </div>
+                            <div>
+                                <h6 class="mb-0">Clark Kent</h6>
+                                <span class="text-white-50 small">Participou da 31ª Mostra</span>
+                            </div>
+                        </figcaption>
+                    </div>
+                </figure>
+            </swiper-slide>
+            <swiper-slide class="mb-6 mb-lg-0">
+                <figure class="mb-0 position-relative">
+                    <div>
+                        <blockquote>
+                            <p class="lead mb-4">
+                                "In ratione quam. Debitis nihil suscipit similique enim iusto. Maxime ratione laboriosam sunt sed provident
+                                et. Ipsum asperiores rerum vero placeat dolores magnam."
+                            </p>
+                        </blockquote>
+                        <figcaption class="d-flex align-items-center">
+                            <div class="position-relative me-4">
+                                <img
+                                    class="position-relative avatar rounded-circle"
+                                    src="../../../../assets/images/testimonials/wonder/DC-Comics-Wonder-Woman-square.png"
+                                    alt=""
+                                />
+                            </div>
+                            <div>
+                                <h6 class="mb-0">Diana Prince</h6>
+                                <span class="text-white-50 small">Participou da 30ª e 31ª Mostra</span>
+                            </div>
+                        </figcaption>
+                    </div>
+                </figure>
+            </swiper-slide>
+        </swiper-container>
+
+        <swiper-container
+            class="swiper-container row justify-content-between"
+            style="min-height: 350px"
+            pagination="true"
+            slides-per-view="3"
+            space-between="10"
+            loop="true"
+            autoplay-delay="2500"
+            autoplay-disable-on-interaction="false"
+            *ngIf="slidesPerView === 3"
+        >
+            <swiper-slide class="mb-6 mb-lg-0">
+                <figure class="mb-0 position-relative">
+                    <div>
+                        <blockquote>
+                            <p class="lead mb-4">
+                                "Pariatur id et omnis nihil. Dignissimos molestias aut reiciendis mollitia ipsum. Aliquam laborum iste
+                                voluptas consequatur consequatur rerum minima. "
+                            </p>
+                        </blockquote>
+                        <figcaption class="d-flex align-items-center">
+                            <div class="position-relative me-4">
+                                <img
+                                    class="position-relative avatar rounded-circle"
+                                    src="../../../../assets/images/testimonials/spidey/Marvel-Spiderman-avatar.png"
+                                    alt=""
+                                />
+                            </div>
+                            <div>
+                                <h6 class="mb-0">Peter Parker</h6>
+                                <span class="text-white-50 small"> Participou da 30ª e 29ª Mostra Jovem </span>
+                            </div>
+                        </figcaption>
+                    </div>
+                </figure>
+            </swiper-slide>
+            <swiper-slide class="mb-6 mb-lg-0">
+                <figure class="mb-0 position-relative">
+                    <div>
+                        <blockquote>
+                            <p class="lead mb-4">"Et et sed vero aut. Et ea eius ipsam et eaque veritatis sed nostrum."</p>
+                        </blockquote>
+                        <figcaption class="d-flex align-items-center">
+                            <div class="position-relative me-4">
+                                <img
+                                    class="position-relative avatar rounded-circle"
+                                    src="../../../../assets/images/testimonials/caps/marvel-captain-america-square.png"
+                                    alt=""
+                                />
+                            </div>
+                            <div>
+                                <h6 class="mb-0">Steve Rogers</h6>
+                                <span class="text-white-50 small"> Participou de todas as Mostras </span>
+                            </div>
+                        </figcaption>
+                    </div>
+                </figure>
+            </swiper-slide>
+            <swiper-slide class="mb-6 mb-lg-0">
+                <figure class="mb-0 position-relative">
+                    <div>
+                        <blockquote>
+                            <p class="lead mb-4">
+                                "Fugiat consectetur unde sed corrupti et ut temporibus. Voluptatibus sit et enim corporis aperiam non et
+                                cumque."
+                            </p>
+                        </blockquote>
+                        <figcaption class="d-flex align-items-center">
+                            <div class="position-relative me-4">
+                                <img
+                                    class="position-relative avatar rounded-circle"
+                                    src="../../../../assets/images/testimonials/hulk/Marvel-Hulk.svg"
+                                    alt=""
+                                />
+                            </div>
+                            <div>
+                                <h6 class="mb-0">Bruce Banner</h6>
+                                <span class="text-white-50 small">Palestrante da 31ª Mostra</span>
+                            </div>
+                        </figcaption>
+                    </div>
+                </figure>
+            </swiper-slide>
+            <swiper-slide class="mb-6 mb-lg-0">
+                <figure class="mb-0 position-relative">
+                    <div>
+                        <blockquote>
+                            <p class="lead mb-4">
+                                "Ipsa facilis est. Commodi aut aut doloribus veniam non error eveniet. Fugiat voluptas saepe rerum
+                                temporibus est tenetur odit. Amet vero omnis omnis unde dignissimos ut libero. Culpa et magnam ipsam quos. "
+                            </p>
+                        </blockquote>
+                        <figcaption class="d-flex align-items-center">
+                            <div class="position-relative me-4">
+                                <img
+                                    class="position-relative avatar rounded-circle"
+                                    src="../../../../assets/images/testimonials/batsy/DC-Comics-batman-square.png"
+                                    alt=""
+                                />
+                            </div>
+                            <div>
+                                <h6 class="mb-0">Bruce Wayne</h6>
+                                <span class="text-white-50 small">Participou da 28ª, 29ª, 30ª e 31ª Mostra</span>
+                            </div>
+                        </figcaption>
+                    </div>
+                </figure>
+            </swiper-slide>
+            <swiper-slide class="mb-6 mb-lg-0">
+                <figure class="mb-0 position-relative">
+                    <div>
+                        <blockquote>
+                            <p class="lead mb-4">
+                                "Minima nesciunt eos quis sit corrupti. Sapiente explicabo et optio soluta. Illum delectus optio velit
+                                molestiae aut qui dolor eaque. Illum eos autem et ullam."
+                            </p>
+                        </blockquote>
+                        <figcaption class="d-flex align-items-center">
+                            <div class="position-relative me-4">
+                                <img
+                                    class="position-relative avatar rounded-circle"
+                                    src="../../../../assets/images/testimonials/sups/DC-Comics-Superman copie.png"
+                                    alt=""
+                                />
+                            </div>
+                            <div>
+                                <h6 class="mb-0">Clark Kent</h6>
+                                <span class="text-white-50 small">Participou da 31ª Mostra</span>
+                            </div>
+                        </figcaption>
+                    </div>
+                </figure>
+            </swiper-slide>
+            <swiper-slide class="mb-6 mb-lg-0">
+                <figure class="mb-0 position-relative">
+                    <div>
+                        <blockquote>
+                            <p class="lead mb-4">
+                                "In ratione quam. Debitis nihil suscipit similique enim iusto. Maxime ratione laboriosam sunt sed provident
+                                et. Ipsum asperiores rerum vero placeat dolores magnam."
+                            </p>
+                        </blockquote>
+                        <figcaption class="d-flex align-items-center">
+                            <div class="position-relative me-4">
+                                <img
+                                    class="position-relative avatar rounded-circle"
+                                    src="../../../../assets/images/testimonials/wonder/DC-Comics-Wonder-Woman-square.png"
+                                    alt=""
+                                />
+                            </div>
+                            <div>
+                                <h6 class="mb-0">Diana Prince</h6>
+                                <span class="text-white-50 small">Participou da 30ª e 31ª Mostra</span>
+                            </div>
+                        </figcaption>
+                    </div>
+                </figure>
+            </swiper-slide>
+        </swiper-container>
     </div>
 </section>
