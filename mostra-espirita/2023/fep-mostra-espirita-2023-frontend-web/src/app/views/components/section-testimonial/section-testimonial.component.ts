@@ -8,17 +8,34 @@ import Swiper from "swiper";
     changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class SectionTestimonialComponent implements OnInit {
-    slidesPerView = 3;
+    swiper: Swiper;
+    slidesPerView = 0;
 
     constructor(private cdr: ChangeDetectorRef) {}
 
     ngOnInit() {
-        this.slidesPerView = 1;
-        if (window.innerWidth > 768) {
-            this.slidesPerView = 2;
-        }
-        if (window.innerWidth > 992) {
-            this.slidesPerView = 3;
-        }
+        this.swiper = new Swiper(".swiper-container", {
+            slidesPerView: 1,
+            // other options...
+            breakpoints: {
+                // when window width is >= 320px
+                320: {
+                    slidesPerView: 1,
+                    spaceBetween: 10,
+                },
+                // when window width is >= 480px
+                768: {
+                    slidesPerView: 2,
+                    spaceBetween: 30,
+                },
+                // when window width is >= 640px
+                992: {
+                    slidesPerView: 3,
+                    spaceBetween: 30,
+                },
+            },
+            autoplay: true,
+            autoHeight: true,
+        });
     }
 }
