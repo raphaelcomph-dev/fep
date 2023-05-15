@@ -1,4 +1,4 @@
-import { AfterViewInit, ChangeDetectionStrategy, Component, HostListener, TemplateRef } from "@angular/core";
+import { AfterViewInit, ChangeDetectionStrategy, Component, EventEmitter, HostListener, Output, TemplateRef } from "@angular/core";
 import { NgbOffcanvas } from "@ng-bootstrap/ng-bootstrap";
 
 @Component({
@@ -10,6 +10,7 @@ import { NgbOffcanvas } from "@ng-bootstrap/ng-bootstrap";
 export class SectionHeaderComponent implements AfterViewInit {
     isHeaderFixed = false;
     currentSection: string;
+    @Output() scrollToSectionEvent = new EventEmitter<string>();
 
     constructor(private offcanvasService: NgbOffcanvas) {}
 
@@ -20,11 +21,8 @@ export class SectionHeaderComponent implements AfterViewInit {
 
     scrollToSection(sectionId: string): void {
         this.offcanvasService.dismiss();
-        setTimeout(() => {
-            const element = document.getElementById(sectionId);
-            element.scrollIntoView({ behavior: "smooth" });
-            this.currentSection = sectionId;
-        }, 100);
+        this.currentSection = sectionId;
+        this.scrollToSectionEvent.emit(sectionId);
     }
 
     ngAfterViewInit(): void {
