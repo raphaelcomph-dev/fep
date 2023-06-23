@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnInit } from "@angular/core";
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, EventEmitter, OnInit, Output } from "@angular/core";
 
 @Component({
     selector: "app-section-about",
@@ -7,6 +7,8 @@ import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnInit } from "@
     changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class SectionAboutComponent implements OnInit {
+    @Output() scrollToSectionEvent = new EventEmitter<string>();
+
     targetDate = new Date("2023-09-15 19:00:00");
     remainingTime = {
         months: 0,
@@ -25,21 +27,40 @@ export class SectionAboutComponent implements OnInit {
     constructor(private cdr: ChangeDetectorRef) {}
 
     ngOnInit() {
+        this.calculateRemainingTime();
+    }
+
+    private calculateRemainingTime() {
         setInterval(() => {
             const now = new Date();
             const difference = this.targetDate.getTime() - now.getTime();
 
             this.remainingTime.months = Math.floor(
-                difference / (this.ONE_SECOND_IN_MILISEC * this.ONE_MINUTE_IN_SECONDS * this.ONE_HOUR_IN_MINUTES * this.ONE_DAY_IN_HOURS * this.ONE_MONTH_IN_DAYS)
+                difference /
+                    (this.ONE_SECOND_IN_MILISEC *
+                        this.ONE_MINUTE_IN_SECONDS *
+                        this.ONE_HOUR_IN_MINUTES *
+                        this.ONE_DAY_IN_HOURS *
+                        this.ONE_MONTH_IN_DAYS)
             );
             this.remainingTime.days = Math.floor(
-                (difference / (this.ONE_SECOND_IN_MILISEC * this.ONE_MINUTE_IN_SECONDS * this.ONE_HOUR_IN_MINUTES * this.ONE_DAY_IN_HOURS)) % this.ONE_MONTH_IN_DAYS
+                (difference /
+                    (this.ONE_SECOND_IN_MILISEC * this.ONE_MINUTE_IN_SECONDS * this.ONE_HOUR_IN_MINUTES * this.ONE_DAY_IN_HOURS)) %
+                    this.ONE_MONTH_IN_DAYS
             );
-            this.remainingTime.hours = Math.floor((difference / (this.ONE_SECOND_IN_MILISEC * this.ONE_MINUTE_IN_SECONDS * this.ONE_HOUR_IN_MINUTES)) % this.ONE_DAY_IN_HOURS);
-            this.remainingTime.minutes = Math.floor((difference / (this.ONE_SECOND_IN_MILISEC * this.ONE_MINUTE_IN_SECONDS)) % this.ONE_HOUR_IN_MINUTES);
+            this.remainingTime.hours = Math.floor(
+                (difference / (this.ONE_SECOND_IN_MILISEC * this.ONE_MINUTE_IN_SECONDS * this.ONE_HOUR_IN_MINUTES)) % this.ONE_DAY_IN_HOURS
+            );
+            this.remainingTime.minutes = Math.floor(
+                (difference / (this.ONE_SECOND_IN_MILISEC * this.ONE_MINUTE_IN_SECONDS)) % this.ONE_HOUR_IN_MINUTES
+            );
             this.remainingTime.seconds = Math.floor((difference / this.ONE_SECOND_IN_MILISEC) % this.ONE_MINUTE_IN_SECONDS);
 
             this.cdr.detectChanges();
         }, 1000);
+    }
+
+    scrollToSection(sectionId: string): void {
+        this.scrollToSectionEvent.emit(sectionId);
     }
 }
